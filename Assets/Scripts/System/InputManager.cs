@@ -51,13 +51,13 @@ public class InputManager : MonoBehaviour{
     //-----------------
 
     void Start(){
-        this.actionUIComp = this.actions[0].GetCompomemt<ActionUI>();
+        //this.actionUIComp = this.actions[0].GetCompomemt<ActionUI>();
         this.refActionNomber = 0;
 
         //-----------------
         //最初に装備しているActionUIのsetPlayerの実行と、このActionUIに設定されているCanUse(...)Keyの設定を取得する
         this.playerComp = player.GetComponent<PlayerController>();
-        //this.actionUIComp = firstSetAction.GetComponent<ActionUI>();
+        this.actionUIComp = firstSetAction.GetComponent<ActionUI>();
 
         this.actionUIComp.PlayerSet(player);
         this.CanUseUpKey = this.actionUIComp.GetCanPush(ActionUI.ActionKey.UP);
@@ -149,7 +149,7 @@ public class InputManager : MonoBehaviour{
         }
 
         if(Input.GetKey(KeyCode.C)){
-            if(this.refActionNomber + 1 );
+            //if(this.refActionNomber + 1 );
         }
     }
 
