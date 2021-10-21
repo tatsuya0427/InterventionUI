@@ -36,12 +36,17 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Character\CharacterController.cs" />
+     <Compile Include="Assets\Scripts\ActionUI\ActionUI.cs" />
+     <Compile Include="Assets\Scripts\ActionUI\ArrowAction.cs" />
+     <Compile Include="Assets\Scripts\ActionUI\WalkAction.cs" />
+     <Compile Include="Assets\Scripts\ActionUI\nonAction.cs" />
+     <Compile Include="Assets\Scripts\Character\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Extension\SingletonMonoBehaviour.cs" />
      <Compile Include="Assets\Scripts\Item\BaseItemObject.cs" />
      <Compile Include="Assets\Scripts\Obstacle\BaseObstacleController.cs" />
      <Compile Include="Assets\Scripts\Obstacle\ReciprocatingObstacle.cs" />
      <Compile Include="Assets\Scripts\System\GameManager.cs" />
+     <Compile Include="Assets\Scripts\System\InputManager.cs" />
      <Compile Include="Assets\Scripts\System\MoveSceneManager.cs" />
      <Compile Include="Assets\Scripts\System\SaveData.cs" />
      <Compile Include="Assets\Scripts\System\SaveManager.cs" />
@@ -50,7 +55,6 @@
      <Compile Include="Assets\Scripts\UI\FadeCanvas.cs" />
      <Compile Include="Assets\Scripts\UI\PushButtonActive.cs" />
      <Compile Include="Assets\Scripts\UI\VolumeController.cs" />
-     <Compile Include="Assets\Scripts\UI\pushButtonTwin.cs" />
      <None Include="Assets\Scripts\scripts.txt" />
      <None Include="Assets\Sprites\sprites.txt" />
      <None Include="Assets\Prefabs\prefabs.txt" />

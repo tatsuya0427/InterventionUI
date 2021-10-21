@@ -5,49 +5,29 @@ using UnityEngine.UI;
 
 public class PushButtonActive : MonoBehaviour{
 
-    //[SerializeField]protected string buttonName;
-    
-    public enum ArrowKey{
-        UP,DOWN,LEFT,RIGHT,SPACE
-    }
+    [SerializeField]protected Image buttonImage;
+    [SerializeField]protected Sprite pushSprite;
+    [SerializeField]protected Sprite idleSprite;
+    [SerializeField]protected Sprite notUseSprite;
 
-    [SerializeField]protected ArrowKey pushType;
+    private bool canUse = false;
 
-    private KeyCode checkKey;
-
-    public Image sampleImage;
-    public Sprite redImage;
-    public Sprite whiteImage;
-
-    void Start(){
-        switch(pushType){
-            case ArrowKey.DOWN:
-                checkKey = KeyCode.DownArrow;
-            break;
-            case ArrowKey.UP:
-                checkKey = KeyCode.UpArrow;
-            break;
-            case ArrowKey.LEFT:
-                checkKey = KeyCode.LeftArrow;
-            break;
-            case ArrowKey.RIGHT:
-                checkKey = KeyCode.RightArrow;
-            break;
-            case ArrowKey.SPACE:
-                checkKey = KeyCode.Space;
-            break;
+    public void PushKey(bool nowPush){
+        if(this.canUse){
+            if(nowPush){
+                buttonImage.sprite = pushSprite;
+            }else{
+                buttonImage.sprite = idleSprite;
+            }
         }
-
-        //Debug.Log(checkKey);
     }
 
-    void Update(){
-        if(Input.GetKey(checkKey)){
-            sampleImage.sprite = redImage;
+    public void ChangeState(bool use){
+        this.canUse = use;
+        if(this.canUse){
+            buttonImage.sprite = idleSprite;
         }else{
-            sampleImage.sprite = whiteImage;
+            buttonImage.sprite = notUseSprite;
         }
     }
-
-
 }

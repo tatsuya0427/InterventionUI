@@ -6,19 +6,22 @@ using UnityEngine;
 [RequireComponent(typeof(SaveManager))]
 [RequireComponent(typeof(SoundManager))]
 [DefaultExecutionOrder(-5)]
-public class GameManager : SingletonMonoBehaviour<GameManager>
-{
+public class GameManager : SingletonMonoBehaviour<GameManager>{
 
 	[Header("シーンロード時に自動生成するプレハブを登録")]
 	[SerializeField]
 	GameObject[] prefabs = null;
 
+	[Header("ゲーム設定")]
+	//[SerializeField]
+
 	MoveSceneManager moveSceneManager;
 	SaveManager saveManager;
 	SoundManager soundManager;
 
-	protected override void Awake()
-	{
+	//List<>
+
+	protected override void Awake(){
 		base.Awake();
 
 		if (Debug.isDebugBuild)
@@ -31,21 +34,18 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 		soundManager = GetComponent<SoundManager>();
 	}
 
-	void Start()
-	{
+	void Start(){
 		if (Debug.isDebugBuild)
 		{
 			InstantiateWhenLoadScene();
 		}
 	}
 
-	void Update()
-	{
+	void Update(){
         
 	}
 
-	public void InstantiateWhenLoadScene()
-	{
+	public void InstantiateWhenLoadScene(){
 		if(moveSceneManager.SceneName == "Title")
 		{
 			return;
